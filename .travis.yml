@@ -10,11 +10,7 @@ node_js:
   - 10.6
 
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
 branches:
   only:
@@ -27,7 +23,7 @@ before_script:
 script:
   - npm run lint
   - npm run test
-#  - npm run e2e
+  - npm run e2e
   - ng build --prod --base-href /
 
 after_success:
