@@ -30,7 +30,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ncu": "ncu -a && npm update"
   },
   "private": true,
   "dependencies": {
@@ -57,6 +58,7 @@
     "@types/node": "~10.5.2",
     "codelyzer": "~4.4.2",
     "coveralls": "^3.0.2",
+    "hoek": "^5.0.3",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.4",
@@ -68,6 +70,6 @@
     "source-map-explorer": "^1.5.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.10.0",
-    "typescript": "~2.9.2"
+    "typescript": "^2.9.2"
   }
 }
