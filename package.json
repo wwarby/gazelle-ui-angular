@@ -33,6 +33,7 @@
     "deploy-test": "npm run build && ts-node scripts/deploy test && rimraf dist",
     "deploy-prod": "ng lint && ng test --browsers ChromeHeadless --watch false && ng e2e && npm run build-prod && ts-node scripts/deploy prod && rimraf dist",
     "deploy-all": "npm run deploy-dev && npm run deploy-test && npm run deploy-prod",
+    "docker": "docker build -t gazelle . && docker run -d -p 4200:80 gazelle",
     "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
