@@ -27,11 +27,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --base-href /",
+    "build-prod": "ng build --prod --base-href /",
+    "deploy-dev": "npm run build && ts-node scripts/deploy dev && rimraf dist",
+    "deploy-test": "npm run build && ts-node scripts/deploy test && rimraf dist",
+    "deploy-prod": "ng lint && ng test --browsers ChromeHeadless --watch false && ng e2e && npm run build-prod && ts-node scripts/deploy prod && rimraf dist",
+    "deploy-all": "npm run deploy-dev && npm run deploy-test && npm run deploy-prod",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ncu": "ncu -a && npm update"
+    "ncu": "ncu -a -x typescript && npm update"
   },
   "private": true,
   "dependencies": {
@@ -58,10 +63,8 @@
     "@types/node": "~10.5.2",
     "codelyzer": "~4.4.2",
     "coveralls": "^3.0.2",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-util": "^3.0.8",
-    "gulpclass": "^0.2.0",
+    "fs": "0.0.1-security",
+    "ftp-deploy": "^2.1.2",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.4",
@@ -70,11 +73,11 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^1.2.0",
     "lodash": "^4.17.10",
+    "path": "^0.12.7",
     "protractor": "~5.3.2",
     "source-map-explorer": "^1.5.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "^7.0.0",
     "tslint": "~5.10.0",
-    "typescript": "^2.7.2",
-    "vinyl-ftp": "^0.6.1"
+    "typescript": "~2.7.2"
   }
 }
