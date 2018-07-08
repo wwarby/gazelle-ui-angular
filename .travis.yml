@@ -27,12 +27,12 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 script:
   - npm run lint
-  - npm run test
- # - npm run e2e
+  - npm run test -- --code-coverage
+  - npm run e2e
   - ng build --prod --base-href /
 
 after_success:
-#  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 notifications:
   email:
