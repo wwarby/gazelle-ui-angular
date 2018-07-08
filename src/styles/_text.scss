@@ -1,0 +1,32 @@
+// sass-lint:disable no-url-domains,no-url-protocols
+
+@import 'variables';
+@import 'mixins';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+
+html,
+body,
+button,
+input,
+table,
+td,
+th,
+textarea {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-s;
+  font-weight: 300;
+
+  @include screensize-gte(xs) {
+    font-size: $font-size-m;
+    font-weight: 400;
+  }
+
+}
+
+html,
+body,
+textarea {
+  color: $black;
+}
+

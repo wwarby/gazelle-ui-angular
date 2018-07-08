@@ -1,0 +1,87 @@
+@import 'variables';
+@import 'functions';
+@import 'selectors';
+
+// sass-lint:disable no-vendor-prefixes
+
+@mixin clearfix {
+  &::after { content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+@mixin invisible {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+@mixin ellipsis($width: 100%) {
+  display: inline-block;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin word-wrap($wrap: break-word) {
+  overflow-wrap: $wrap;
+  word-wrap: $wrap;
+
+  @if $wrap == break-word {
+    word-break: break-all;
+  } @else {
+    word-break: $wrap;
+  }
+}
+
+@mixin high-dpi($ratio: 1.3) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+    only screen and (min--moz-device-pixel-ratio: $ratio),
+    only screen and (-o-min-device-pixel-ratio: #{$ratio} / 1),
+    only screen and (min-resolution: round($ratio * 96dpi)),
+    only screen and (min-resolution: $ratio * 1dppx) {
+      @content;
+  }
+}
+
+@mixin retina-image($filename, $background-size, $extension: png, $retina-suffix: .2x) {
+  @include high-dpi {
+    background-image: url('#{$filename}#{$retina-suffix}.#{$extension}');
+    background-size: $background-size;
+  }
+
+  background-image: url('#{$filename}.#{$extension}');
+}
+
+@mixin screensize-lte($media) {
+  @if $media == lg {
+    @media only all and (max-width: $screen-size-lg - 1) { @content; }
+  } @else if $media == md {
+    @media only all and (max-width: $screen-size-md - 1) { @content; }
+  } @else if $media == sm {
+    @media only all and (max-width: $screen-size-sm - 1) { @content; }
+  } @else if $media == xs {
+    @media only all and (max-width: $screen-size-xs - 1) { @content; }
+  }
+}
+
+@mixin screensize-gte($media) {
+  @if $media == lg {
+    @media only all and (min-width: $screen-size-lg) { @content; }
+  } @else if $media == md {
+    @media only all and (min-width: $screen-size-md) { @content; }
+  } @else if $media == sm {
+    @media only all and (min-width: $screen-size-sm) { @content; }
+  } @else if $media == xs {
+    @media only all and (min-width: $screen-size-xs) { @content; }
+  }
+}

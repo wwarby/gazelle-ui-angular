@@ -1,0 +1,41 @@
+@import 'functions';
+
+// sass-lint:disable indentation
+
+$buttons-list: 'button',
+               'input[type="button"]',
+               'input[type="reset"]',
+               'input[type="submit"]';
+
+$all-buttons:          add-suffix($buttons-list);
+$all-buttons-active:   add-suffix($buttons-list, ':active');
+$all-buttons-focus:    add-suffix($buttons-list, ':focus');
+$all-buttons-hover:    add-suffix($buttons-list, ':hover');
+$all-buttons-disabled: add-suffix($buttons-list, '[disabled]');
+
+$all-button-inputs:        $all-buttons;
+$all-button-inputs-active: $all-buttons-active;
+$all-button-inputs-focus:  $all-buttons-focus;
+$all-button-inputs-hover:  $all-buttons-hover;
+
+$text-inputs-list: 'input[type="color"]',
+                   'input[type="date"]',
+                   'input[type="datetime"]',
+                   'input[type="datetime-local"]',
+                   'input[type="email"]',
+                   'input[type="month"]',
+                   'input[type="number"]',
+                   'input[type="password"]',
+                   'input[type="search"]',
+                   'input[type="tel"]',
+                   'input[type="text"]',
+                   'input[type="time"]',
+                   'input[type="url"]',
+                   'input[type="week"]',
+                   'input:not([type])',
+                   'textarea';
+
+$all-text-inputs:         add-suffix($text-inputs-list);
+$all-text-inputs-active:  add-suffix($text-inputs-list, ':active');
+$all-text-inputs-focus:   add-suffix($text-inputs-list, ':focus');
+$all-text-inputs-hover:   add-suffix($text-inputs-list, ':hover');

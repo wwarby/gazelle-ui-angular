@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BestEffortsComponent } from './best-efforts.component';
+import { TestsModule } from '../shared/tests.module';
 
 describe('BestEffortsComponent', () => {
   let component: BestEffortsComponent;
@@ -8,6 +9,7 @@ describe('BestEffortsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ TestsModule ],
       declarations: [ BestEffortsComponent ]
     })
     .compileComponents();

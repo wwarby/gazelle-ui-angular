@@ -1,0 +1,14 @@
+.clearfix { @include clearfix; }
+.hide-text { @include hide-text; }
+.invisible { @include invisible; }
+.ellipsis { @include ellipsis; }
+.word-wrap { @include word-wrap; }
+.relative { position: relative; }
+.nowrap { white-space: nowrap; }
+.word-break { word-break: break-all; }
+.printonly { display: none; }
+
+@media print {
+  .noprint { display: none !important; }
+  .printonly { display: block; }
+}

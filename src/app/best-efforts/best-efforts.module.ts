@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BestEffortsComponent } from './best-efforts/best-efforts.component';
+import { BestEffortsComponent } from './best-efforts.component';
 
 @NgModule({
   imports: [

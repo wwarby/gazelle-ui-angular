@@ -1,0 +1,11 @@
+@function add-suffix($selectors, $suffix: null) {
+  $list: ();
+
+  @each $selector in $selectors {
+    $selector: unquote($selector);
+    $selector: if($suffix, $selector + $suffix, $selector);
+    $list: append($list, $selector, comma);
+  }
+
+  @return $list;
+}
