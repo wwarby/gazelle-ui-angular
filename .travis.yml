@@ -21,14 +21,18 @@ branches:
     - master
 
 before_script:
-  - set -e
+  # set -e causes the script to exit as soon as one command returns a non-zero exit code
+  # set -v makes the shell print all lines in the script before executing them, which helps identify which steps failed
+  - set -ev
   - npm install
+  # Create a GUI environment to run ng e2e
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
 script:
-  - npm run lint
-  - npm run test -- --code-coverage
-  - npm run e2e
+  - ng lint
+  - ng test -- --code-coverage --browsers ChromeHeadless --watch false
+  - ng e2e
   - ng build --prod --base-href /
 
 after_success:
