@@ -1,0 +1,12 @@
+{
+  "test": {
+    "host": "test.domain.com",
+    "user": "user",
+    "password": "password"
+  },
+  "prod": {
+    "host": "domain.com",
+    "user": "user",
+    "password": "password"
+  }
+}

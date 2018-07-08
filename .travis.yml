@@ -31,7 +31,7 @@ before_script:
   - sleep 3 # give xvfb some time to start
 script:
   - ng lint
-  - ng test -- --code-coverage --browsers ChromeHeadless --watch false
+  - ng test --code-coverage --browsers ChromeHeadless --watch false
   - ng e2e
   - ng build --prod --base-href /
 

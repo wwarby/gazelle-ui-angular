@@ -4,11 +4,14 @@ import { Gulpclass, Task } from 'gulpclass/Decorators';
 import gulp = require('gulp');
 import gutil = require('gulp-util');
 import ftp = require('vinyl-ftp');
+import fs = require('fs');
+
+const publishConfig = JSON.parse(fs.readFileSync('publish-config', 'utf8'));
 
 @Gulpclass()
 export class Gulpfile {
 
-    @Task('clean-dist')
+    @Task('publish')
     clean(cb: Function) {
       const conn = ftp.create({
         host: 'mywebsite.tld',
