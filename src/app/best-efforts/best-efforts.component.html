@@ -1,1 +1,21 @@
 <h1>Best Efforts</h1>
+<table>
+  <thead>
+      <tr>
+        <th>Position</th>
+        <th>Time</th>
+        <th>Date</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let effort of bestEfforts">
+      <td>
+        <img *ngIf="effort.id === 1" src="assets/images/gold-medal.svg" width="32" height="32" alt="Gold medal" />
+        <img *ngIf="effort.id === 2" src="assets/images/silver-medal.svg" width="32" height="32" alt="Gold medal" />
+        <img *ngIf="effort.id === 3" src="assets/images/bronze-medal.svg" width="32" height="32" alt="Gold medal" />
+      </td>
+      <td>{{effort.time}}</td>
+      <td>{{effort.activity.date | date}}</td>
+    </tr>
+  </tbody>
+</table>

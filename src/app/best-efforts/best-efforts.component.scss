@@ -1,0 +1,8 @@
+
+@import 'mixins';
+
+table {
+  width: 100%;
+
+  thead { @include hide; }
+}

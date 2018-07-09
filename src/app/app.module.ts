@@ -19,7 +19,7 @@ import { BestEffortsModule } from './best-efforts/best-efforts.module';
     SharedModule,
     CoreModule,
     MaterialModule,
-    BestEffortsModule
+    BestEffortsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

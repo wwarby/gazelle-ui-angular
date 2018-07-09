@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { BestEffortsModule } from '../best-efforts/best-efforts.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    BestEffortsModule
+    BestEffortsModule,
+    RouterModule
   ],
   declarations: [
     NotFoundComponent,

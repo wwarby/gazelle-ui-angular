@@ -11,13 +11,7 @@
   }
 }
 
-@mixin hide-text {
-  overflow: hidden;
-  text-indent: 101%;
-  white-space: nowrap;
-}
-
-@mixin invisible {
+@mixin hide {
   position: absolute;
   left: -9999px;
   top: -9999px;

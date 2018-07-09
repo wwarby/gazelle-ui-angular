@@ -3,7 +3,9 @@
   <div class="inner">
     <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
     <ng-template #isOffline>
-      <div>
+      <div class="offline">
+        <i class="fa fa-wifi fa-3x"></i>
+        <br />
         No internet connection
       </div>
     </ng-template>

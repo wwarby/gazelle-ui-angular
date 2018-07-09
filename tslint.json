@@ -162,7 +162,7 @@
     "no-output-rename": true,
     "pipe-impure": true,
     "templates-no-negated-async": true,
-    "trackBy-function": true,
+    "trackBy-function": false,
     "use-host-property-decorator": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,

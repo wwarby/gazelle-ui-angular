@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,12 @@ export class AppComponent {
 
   public isOnline = true;
 
-  constructor(public title: Title) {
+  constructor(public title: Title, http: HttpClient) {
     this.isOnline = navigator.onLine;
     this.title.setTitle('Gazelle');
+
+    http.get<any>('api/best-efforts')
+      .subscribe(data => console.log(data));
   }
 
 }

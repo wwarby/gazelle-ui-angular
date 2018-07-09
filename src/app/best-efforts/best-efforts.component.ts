@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BestEffort } from '../api-model/best-effort.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-best-efforts',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BestEffortsComponent implements OnInit {
 
-  constructor() { }
+  public bestEfforts: BestEffort[] = [];
+
+  constructor(private route: ActivatedRoute) {
+    this.bestEfforts = this.route.snapshot.data.bestEfforts;
+  }
 
   ngOnInit() {
   }

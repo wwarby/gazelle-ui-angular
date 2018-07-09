@@ -16,9 +16,10 @@
       max-width: $screen-size-lg;
       margin: 0 auto;
     }
+  }
 
-    @media only all and (min-width: $screen-size-lg + 20px) {
-
-    }
+  .offline {
+    padding: 2rem 0;
+    text-align: center;
   }
 }

@@ -1,6 +1,7 @@
+@import 'mixins';
+
 .clearfix { @include clearfix; }
-.hide-text { @include hide-text; }
-.invisible { @include invisible; }
+.hide { @include hide; }
 .ellipsis { @include ellipsis; }
 .word-wrap { @include word-wrap; }
 .relative { position: relative; }
