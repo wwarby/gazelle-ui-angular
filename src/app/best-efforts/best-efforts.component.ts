@@ -11,7 +11,7 @@ export class BestEffortsComponent implements OnInit {
 
   public bestEfforts: BestEffort[] = [];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private readonly route: ActivatedRoute) {
     this.bestEfforts = this.route.snapshot.data.bestEfforts;
   }
 
