@@ -1,8 +1,12 @@
 <app-header></app-header>
-<router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
-<ng-template #isOffline>
-  <div>
-      No internet connection
+<div class="content">
+  <div class="inner">
+    <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
+    <ng-template #isOffline>
+      <div>
+        No internet connection
+      </div>
+    </ng-template>
   </div>
-</ng-template>
+</div>
 <app-footer></app-footer>

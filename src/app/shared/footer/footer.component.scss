@@ -1,0 +1,89 @@
+@import 'variables';
+@import 'colours';
+@import 'mixins';
+
+footer {
+
+  background: $primary;
+  color: $white;
+  font-weight: 300;
+  font-size: $font-size-xs;
+  padding: .5rem .8rem;
+  border-top: .3rem solid $secondary;
+
+  @include screensize(sm) {
+    font-size: $font-size-m;
+    border-top-width: .5rem;
+  }
+
+  a {
+    color: $white;
+  }
+
+  .inner {
+
+    min-width: $screen-size-min;
+    max-width: $screen-size-lg;
+    display: flex;
+    margin: 1rem auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include screensize(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .design {
+      margin: 0 0 2rem;
+
+      @include screensize(sm) {
+        margin: 0 1rem;
+      }
+
+      .logo {
+        width: 153px;
+        height: 32px;
+        display: block;
+        margin: .8rem auto;
+
+        @include screensize(sm) {
+          width: 199px;
+          height: 42px;
+        }
+      }
+    }
+
+    .github {
+
+      @include screensize(sm) {
+        margin: 0 1rem;
+      }
+
+      span {
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+
+      a {
+        display: block;
+        margin: .5rem;
+        text-decoration: none;
+
+        i {
+          font-size: 32px;
+          vertical-align: middle;
+          margin-right: .3rem;
+
+          @include screensize(sm) {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+  }
+
+}

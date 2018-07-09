@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'colours';
+@import 'mixins';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .content {
+    flex: 1;
+    padding: 0 .8rem;
+
+    .inner {
+      min-width: $screen-size-min;
+      max-width: $screen-size-lg;
+      margin: 0 auto;
+    }
+
+    @media only all and (min-width: $screen-size-lg + 20px) {
+
+    }
+  }
+}

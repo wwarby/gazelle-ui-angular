@@ -5,48 +5,60 @@
 header {
 
   background: $primary;
-  padding: .5rem;
-  border-bottom: .3rem solid $secondary;
   color: $white;
-  min-width: 320px;
-  position: relative;
+  font-weight: 300;
+  padding: .5rem .8rem;
 
   a {
     color: $white;
   }
 
-  .logo {
-    width: 130px;
-    vertical-align: bottom;
-  }
+  .inner {
 
-  .tagline {
-    display: inline-block;
-    margin-left: .8rem;
-    vertical-align: bottom;
-    font-weight: 300;
-  }
-
-  .user {
-    position: absolute;
-    right: .6rem;
-    top: 8px;
-    font-size: 32px;
-  }
-
-  @include screensize-gte(xs) {
-
-    padding-right: 1rem;
+    min-width: $screen-size-min;
+    max-width: $screen-size-lg;
+    display: flex;
+    margin: 0 auto;
 
     .logo {
-      width: 214px;
+      width: 130px;
+      height: 39px;
+
+      @include screensize(sm) {
+        width: 214px;
+        height: 65px;
+      }
+    }
+
+    .tagline {
+      display: inline-block;
+      align-self: flex-end;
+      flex-grow: 1;
+      margin-left: .6rem;
     }
 
     .user {
-      font-size: 50px;
-      top: 16px;
-      right: 1rem;
+      font-size: 32px;
+      align-self: center;
+
+      @include screensize(sm) {
+        font-size: 50px;
+      }
     }
   }
 
+}
+
+hr {
+  background: $secondary;
+  color: $secondary;
+  height: .3rem;
+  padding: 0;
+  border: 0;
+  max-width: $screen-size-lg;
+  margin: 0 auto;
+
+  @include screensize(sm) {
+    height: .5rem;
+  }
 }
