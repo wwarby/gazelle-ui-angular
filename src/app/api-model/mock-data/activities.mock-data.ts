@@ -40,7 +40,7 @@ class ActivityFactory {
 
       this.activityData.forEach(x => {
 
-        if (x.date.getHours() < 4 || x.date.getHours() > 23) {
+        if (x.date.getHours() < 4 || x.date.getHours() >= 23) {
           x.name = 'Night run';
         } else if (x.date.getHours() < 12) {
           x.name = 'Morning run';
@@ -48,7 +48,7 @@ class ActivityFactory {
           x.name = 'Lunch run';
         } else if (x.date.getHours() < 18) {
           x.name = 'Afternoon run';
-        } else if (x.date.getHours() < 18) {
+        } else if (x.date.getHours() < 23) {
           x.name = 'Evening run';
         }
 
