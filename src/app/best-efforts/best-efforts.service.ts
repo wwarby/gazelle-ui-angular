@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BestEffort } from '../api-model/best-effort.model';
-import { HttpClient } from '@angular/common/http';
+import { IBestEffort } from '../api-model/best-effort';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class BestEffortsService {
@@ -9,8 +9,15 @@ export class BestEffortsService {
 
   constructor(private readonly http: HttpClient) { }
 
-  public getBestEfforts(distance: number) {
-    return this.http.get<BestEffort[]>(this.baseUrl);
+  public getBestEfforts(distance?: number, limit?: number) {
+
+    const params = new HttpParams()
+      .set('distance', `${distance}`)
+      .set('limit', `${limit}`);
+
+    return this.http.get<IBestEffort[]>(this.baseUrl, {
+      params
+    });
   }
 
 }

@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MaterialModule } from './material.module';
 
 @NgModule({
   exports: [
@@ -14,7 +13,6 @@ import { MaterialModule } from './material.module';
     HttpClientModule,
     RouterModule,
     RouterTestingModule,
-    MaterialModule,
     FormsModule,
     ReactiveFormsModule
   ],

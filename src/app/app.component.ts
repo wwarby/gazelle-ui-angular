@@ -14,9 +14,6 @@ export class AppComponent {
   constructor(public title: Title, http: HttpClient) {
     this.isOnline = navigator.onLine;
     this.title.setTitle('Gazelle');
-
-    http.get<any>('api/best-efforts')
-      .subscribe(data => console.log(data));
   }
 
 }
