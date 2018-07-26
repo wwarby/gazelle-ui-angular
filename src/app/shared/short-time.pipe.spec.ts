@@ -1,6 +1,6 @@
 import { ShortTimePipe } from './short-time.pipe';
 
-fdescribe('ShortTimePipe', () => {
+describe('ShortTimePipe', () => {
 
   it('create an instance', () => {
     const pipe = new ShortTimePipe();

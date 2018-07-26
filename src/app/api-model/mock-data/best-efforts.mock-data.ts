@@ -1,7 +1,5 @@
 import { IBestEffort } from '../best-effort';
-import { sortBy } from 'lodash';
 import { activities } from './activities.mock-data';
-import { ValueTransformer } from '@angular/compiler/src/util';
 
 class BestEffortFactory {
 

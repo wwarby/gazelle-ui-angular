@@ -7,15 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './best-efforts.component.html',
   styleUrls: ['./best-efforts.component.scss']
 })
-export class BestEffortsComponent implements OnInit {
+export class BestEffortsComponent {
 
   public bestEfforts: IBestEffort[] = [];
 
   constructor(private readonly route: ActivatedRoute) {
     this.bestEfforts = this.route.snapshot.data.bestEfforts;
-  }
-
-  ngOnInit() {
   }
 
 }
