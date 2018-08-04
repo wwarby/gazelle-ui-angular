@@ -10,6 +10,6 @@
 [![peerDependencies Status](https://david-dm.org/wwarby/gazelle-ui-angular/peer-status.svg)](https://david-dm.org/wwarby/gazelle-ui-angular?type=peer)
 
 [![GitHub forks](https://img.shields.io/github/forks/wwarby/gazelle-ui-angular.svg?style=social&label=Fork)](https://github.com/wwarby/gazelle-ui-angular/fork)
-[![GitHub stars](https://img.shields.io/github/stars/wwarby/gazelle-ui-angular.svg?style=social&label=Star)](https://github.com/wwarby/gazelle-ui-angular)
+[![GitHub stars](https://img.shields.io/github/stars/wwarby/gazelle-ui-angular.svg?style=social&label=Star)](https://github.com/wwarby/gazelle-ui-angular) [![Greenkeeper badge](https://badges.greenkeeper.io/wwarby/gazelle-ui-angular.svg)](https://greenkeeper.io/)
 
 Shows best efforts for runners on Strava
