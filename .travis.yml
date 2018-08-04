@@ -37,6 +37,7 @@ script:
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - ts-node ./scripts/deploy dev
 
 notifications:
   email:
