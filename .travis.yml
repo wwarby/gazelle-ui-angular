@@ -18,7 +18,7 @@ addons:
 
 branches:
   only:
-    - master
+    - master    - /^greenkeeper/.*$/
 
 before_script:
   # set -e causes the script to exit as soon as one command returns a non-zero exit code
