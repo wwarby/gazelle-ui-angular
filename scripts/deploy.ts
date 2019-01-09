@@ -2,6 +2,10 @@ import * as FtpDeploy from 'ftp-deploy';
 import { existsSync, readFileSync } from 'fs';
 import * as colours from 'colors/safe';
 
+if (process.argv.length < 4) {
+  console.log(colours.green(process.argv[3]));
+}
+
 if (process.argv.length < 3) {
   console.error(colours.red('ERROR: Deployment environment not specified'));
   process.exit(1);
