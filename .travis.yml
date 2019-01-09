@@ -25,6 +25,7 @@ before_script:
   # set -v makes the shell print all lines in the script before executing them, which helps identify which steps failed
   - set -ev
   - npm install
+  - npm install -g ts-node
   # Create a GUI environment to run ng e2e
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
