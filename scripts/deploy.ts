@@ -3,7 +3,9 @@ import { existsSync, readFileSync } from 'fs';
 import * as colours from 'colors/safe';
 
 if (process.argv.length < 4) {
-  console.log(colours.green(process.argv[3]));
+  console.log(colours.green('Demo var: ' + process.argv[3]));
+} else {
+  console.log(colours.red('Demo var not found'));
 }
 
 if (process.argv.length < 3) {

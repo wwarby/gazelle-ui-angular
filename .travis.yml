@@ -30,6 +30,7 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
+  - echo $DEMO_VAR
 script:
   - ng lint
   - ng test --code-coverage --browsers ChromeHeadless --watch false
