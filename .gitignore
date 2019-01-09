@@ -40,4 +40,5 @@ Thumbs.db
 
 # Custom
 deploy.*.json
+!deploy.*-ci.json
 !deploy.sample.json

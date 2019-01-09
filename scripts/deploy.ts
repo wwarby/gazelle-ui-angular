@@ -1,12 +1,7 @@
 import * as FtpDeploy from 'ftp-deploy';
 import { existsSync, readFileSync } from 'fs';
 import * as colours from 'colors/safe';
-
-if (process.argv.length < 4) {
-  console.log(colours.green('Demo var: ' + process.argv[3]));
-} else {
-  console.log(colours.red('Demo var not found'));
-}
+import { IDeployEnvironment } from './deploy-environment';
 
 if (process.argv.length < 3) {
   console.error(colours.red('ERROR: Deployment environment not specified'));
@@ -14,6 +9,7 @@ if (process.argv.length < 3) {
 }
 
 const environment = process.argv[2];
+
 const configPath = `${__dirname}/deploy.${environment}.json`;
 
 if (!existsSync(configPath)) {
@@ -21,7 +17,33 @@ if (!existsSync(configPath)) {
   process.exit(1);
 }
 
-const config = JSON.parse(readFileSync(`${__dirname}/deploy.${environment}.json`, 'utf8'));
+const config: IDeployEnvironment = JSON.parse(readFileSync(`${__dirname}/deploy.${environment}.json`, 'utf8'));
+
+// Override config with values from command line arguments
+process.argv.slice(3).forEach(arg => {
+  if (/.+:.+/.test(arg)) {
+    const name = arg.substr(0, arg.indexOf(':'));
+    const value = arg.substr(name.length + 1);
+    switch (name.toLocaleLowerCase()) {
+      case 'host':
+        config.host = value;
+        break;
+      case 'user':
+        config.user = value;
+        break;
+      case 'password':
+        config.password = value;
+        break;
+      case 'port':
+        config.port = parseInt(value, 10);
+        break;
+      case 'dir':
+        config.remoteRoot = value;
+        break;
+    }
+  }
+});
+
 const ftpDeploy = new FtpDeploy();
 
 // Attempt deployment

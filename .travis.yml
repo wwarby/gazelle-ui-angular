@@ -30,7 +30,6 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
-  - echo $DEMO_VAR
 script:
   - ng lint
   - ng test --code-coverage --browsers ChromeHeadless --watch false
@@ -39,7 +38,7 @@ script:
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - ts-node ./scripts/deploy dev $DEMO_VAR
+  - ts-node ./scripts/deploy prod-ci host:${DEPLOY_HOSTNAME} user:${DEPLOY_USER} password:${DEPLOY_PASSWORD} port:${DEPLOY_PORT} dir:${DEPLOY_DIR}
 
 notifications:
   email:

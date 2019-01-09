@@ -1,0 +1,10 @@
+{
+  "host": "",
+  "port": 0,
+  "localRoot": "./dist",
+  "remoteRoot": "",
+  "user": "",
+  "password": "",
+  "include": [".*", "*", "**/*"],
+  "exclude": []
+}
