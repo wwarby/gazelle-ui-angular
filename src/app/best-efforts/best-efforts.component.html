@@ -8,15 +8,38 @@
       </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let effort of bestEfforts">
-      <td>
-        <img *ngIf="effort.position === 1" src="assets/images/gold-medal.svg" width="32" height="32" alt="Gold medal" />
-        <img *ngIf="effort.position === 2" src="assets/images/silver-medal.svg" width="32" height="32" alt="Silver medal" />
-        <img *ngIf="effort.position === 3" src="assets/images/bronze-medal.svg" width="32" height="32" alt="Bronze medal" />
-      </td>
-      <td>{{effort.time | shortTime}}</td>
-      <td class="activity-name">{{effort.activity.name}}</td>
-      <td>{{effort.activity.date | date : 'longDate'}}</td>
-    </tr>
+    <ng-container *ngFor="let effort of bestEfforts">
+      <tr [ngClass]="{'selected': effort.selected}" (click)="selectRow(effort)">
+        <td>
+          <img *ngIf="effort.position === 1" src="assets/images/gold-medal.svg" width="32" height="32" alt="Gold medal" />
+          <img *ngIf="effort.position === 2" src="assets/images/silver-medal.svg" width="32" height="32" alt="Silver medal" />
+          <img *ngIf="effort.position === 3" src="assets/images/bronze-medal.svg" width="32" height="32" alt="Bronze medal" />
+        </td>
+        <td>{{effort.time | shortTime}}</td>
+        <td class="activity-name">{{effort.activity.name}}</td>
+        <td>{{effort.activity.date | date : 'longDate'}}</td>
+      </tr>
+      <tr *ngIf="effort.selected">
+        <td class="detail" colspan="4">
+          <div class="header">
+            <h3>{{effort.activity.name}}</h3>
+            <ul>
+              <li>
+                <span>{{effort.activity.pace | shortTime}}/km</span>
+                <strong>PACE</strong>
+              </li>
+              <li>
+                <span>{{(effort.activity.totalDistance / 1000) | number:'1.1-2'}} km</span>
+                <strong>DISTANCE</strong>
+              </li>
+              <li>
+                <span>{{effort.time | shortTime}}</span>
+                <strong>MOVING TIME</strong>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
   </tbody>
 </table>

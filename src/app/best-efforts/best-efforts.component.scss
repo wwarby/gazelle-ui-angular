@@ -1,4 +1,5 @@
 
+@import 'colours';
 @import 'mixins';
 
 table {
@@ -7,19 +8,42 @@ table {
   thead { @include hide; }
 
   tr {
-    td:first-child {
-      width: 40px;
-      height: 32px;
+
+    td {
+      padding: 5px;
     }
 
     td:last-child {
       text-align: right;
     }
 
+    td:first-child {
+      width: 40px;
+      height: 32px;
+      text-align: left;
+
+      img {
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+    }
+
     &:first-child {
       td {
         font-weight: bold;
       }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: $primary;
+      color: $white;
+    }
+
+    &.selected {
+      background: $secondary;
+      color: $white;
     }
   }
 }
@@ -28,6 +52,46 @@ table {
   display: none;
 
   @include screensize(sm) {
-    display: inherit;
+    display: table-cell;
+  }
+}
+
+.detail {
+
+  padding: 0 !important;
+
+  .header {
+    padding: 1rem;
+    margin: 0;
+    background: $primary;
+    color: $white;
+
+    h3 {
+      padding: 0;
+      margin: .3rem 0 1rem;
+    }
+
+    ul {
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      span {
+        display: block;
+      }
+
+      strong {
+
+      }
+    }
   }
 }

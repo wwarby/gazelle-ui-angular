@@ -12,4 +12,6 @@ export interface IBestEffort {
 
   activity: IActivity;
 
+  selected: boolean;
+
 }
